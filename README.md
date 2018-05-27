@@ -17,4 +17,5 @@ To change the pre populate the authors and books list :
 * Edit the property `authors` to add new author
 * Edit the property `books` to add new book
 * Id is being generated using `author${new Date().getTime()}` or `book${new Date().getTime()}`
-NOTE: You can add author and books from the app also. The above is just to pre populate the app.
+
+> NOTE: You can add author and books from the app also. The above is just to pre populate the app.
