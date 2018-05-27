@@ -17,22 +17,14 @@ import BookDetailComponent from './Component/BookComponents/BookDetailComponent'
 
 let store = createStore(rootReducer);
 
+store.dispatch(dispatchReceiveAuthors(config.authors));
+
+store.dispatch(dispatchReceiveBooks(config.books));
+
 let app = document.getElementById('app');
 
 class App extends React.Component
 {
-    componentDidMount()
-    {
-        store.dispatch(dispatchReceiveAuthors(config.authors));
-
-        store.dispatch(dispatchReceiveBooks(config.books));
-
-        store.subscribe(function()
-        {
-            console.log(store.getState());
-        });
-    }
-
     getBookComponent = (props) =>
     {
         store.dispatch(dispatchRouteChange('books'));

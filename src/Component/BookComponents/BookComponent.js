@@ -25,27 +25,30 @@ export default class BookComponent extends React.Component
         };
     }
 
-    listener = () =>
+    static getDerivedStateFromProps(nextProps, prevState)
     {
-        let storeState = this.props.store.getState();
+        let prevBookList = prevState.booksList;
 
-        this.setState({
-            'booksList':Object.values(storeState.books),
-            'counts':Object.keys(storeState.books).length
-        });
-    };
+        let newBookList = Object.values(nextProps.store.getState().books);
 
-    /**
-     * TODO : Check for unsubscribtion properly
-     */
-    componentDidMount()
-    {
-        this.unsubStore = this.props.store.subscribe(this.listener);
-    }
+        if(prevBookList.length!==newBookList.length)
+        {
+            return {booksList:newBookList,counts:newBookList.length};
+        }
+        else
+        {
+            for(var i=0;i<prevBookList.length;i++)
+            {
+                if(newBookList.indexOf(prevBookList[i])<0)
+                {
+                    break;
 
-    componentWillUnmount()
-    {
-        this.unsubStore();
+                    return {booksList:newBookList,counts:newBookList.length};
+                }
+            }
+        }
+
+        return null;
     }
 
     showPopUp = (e) =>

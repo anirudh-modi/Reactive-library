@@ -36,17 +36,30 @@ export default class AuthorComponent extends React.Component
         });
     };
 
-    /**
-     * TODO : Check for unsubscribtion properly
-     */
-    componentDidMount()
+    static getDerivedStateFromProps(nextProps, prevState)
     {
-        this.unsubStore = this.props.store.subscribe(this.listener);
-    }
+        let prevAuthorList = prevState.authorsList;
 
-    componentWillUnmount()
-    {
-        this.unsubStore();
+        let newAuthorList = Object.values(nextProps.store.getState().authors);
+
+        if(prevAuthorList.length!==newAuthorList.length)
+        {
+            return {authorsList:newAuthorList,counts:newAuthorList.length};
+        }
+        else
+        {
+            for(var i=0;i<prevAuthorList.length;i++)
+            {
+                if(newAuthorList.indexOf(prevAuthorList[i])<0)
+                {
+                    break;
+
+                    return {authorsList:newAuthorList,counts:newAuthorList.length};
+                }
+            }
+        }
+
+        return null;
     }
 
     showPopUp = (e) =>

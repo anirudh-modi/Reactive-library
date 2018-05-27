@@ -39,9 +39,9 @@ export default class AppHeaderComponent extends React.Component
 
     handleOnClick = (e) =>
     {
-        this.setState({
-            selectedTab: e.target.getAttribute('data-value')
-        });
+        //this.setState({
+        //    selectedTab: e.target.getAttribute('data-value')
+        //});
     };
 
     shouldComponentUpdate(nextProps, nextState)
