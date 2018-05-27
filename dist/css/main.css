@@ -1,0 +1,544 @@
+*
+{
+    margin:0px;
+    padding:0px;
+    font-family: sans-serif;
+}
+
+:root
+{
+    --white:#ffffff;
+    --black12:rgba(0,0,0,0.12);
+    --black50:rgba(0,0,0,0.50);
+    --cornflower:#6379f6;
+    --coolGrey:#9395a0;
+    --paleGreyTwo:#f8f8fa;
+    --charcoalGrey:#47494f;
+    --blueyGrey:#9095aa;
+    --battleshipGrey:#777982;
+    --black38:rgba(0,0,0,0.38);
+    --warmGrey38:#618f8f8f;
+    --silver:#d7dbe1;
+    --silverTwo:#dce1e5;
+    --coolGreyTwo:#b5b7c4;
+    --slateGrey:rgba(99, 104, 116, 0.1);
+}
+
+body
+{
+    background: var(--paleGreyTwo);
+}
+
+.appMainContainer
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.appHeaderContainer
+{
+    height:70px;
+    line-height:70px;
+    background: var(--white);
+    box-shadow: 0px 0px 4px 0px var(--black12);
+    display: flex;
+    padding: 0px 40px;
+}
+
+
+.appBodyContainer
+{
+    flex-grow: 1;
+    padding: 0px 40px;
+    margin-top: 40px;
+    display: flex;
+}
+
+.rightAppContainer
+{
+    width: 220px;
+    margin-left: 15px;
+    padding-top:40px;
+}
+
+.leftAppContainer
+{
+    flex-grow: 1;
+    margin-right: 15px;
+    width: calc(100% - 290px);
+}
+
+.appLogoContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.tab
+{
+    padding: 0px 30px;
+    font-size: 14px;
+    color: var(--coolGrey);
+    position: relative;
+}
+
+.selectedTab
+{
+    color:var(--cornflower);
+}
+
+a
+{
+    text-decoration: none;
+}
+.selectedTab::after
+{
+    content: '';
+    position: absolute;
+    border: 2px solid var(--cornflower);
+    width: 10px;
+    bottom: 15px;
+    border-radius: 2px;
+    left: calc(50% - 5px);
+}
+
+.popUpContainer
+{
+    background: var(--black50);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    top: 0px;
+    left:0px;
+    display: none;
+}
+
+.visible
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.popUpBody
+{
+    background: #f8f8fa;
+    margin: auto;
+    position: relative;
+    padding: 20px 30px;
+    width: calc(100% - 60px);
+    max-width: 450px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px 0px var(--black50);
+    overflow: scroll;
+}
+
+.closePopUp
+{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor:pointer;
+    color:var(--coolGrey);
+}
+
+.popUpHeaderTitle
+{
+    font-size: 15px;
+    color: var(--charcoalGrey);
+    margin-top:5px;
+}
+
+.addButton
+{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: var(--cornflower);
+    border-radius: 4px;
+    color: var(--white);
+    cursor:pointer;
+    font-size: 14px;
+    margin: 0px 5px 0px 5px;
+}
+
+.appBodyHeaderContainer
+{
+    display: flex;
+    height:40px;
+    line-height: 40px;
+}
+
+.appBodyHeaderTitle
+{
+    flex-grow: 1;
+    color:var(--battleshipGrey);
+    font-size: 13px;
+}
+
+.appBodyHeaderCount
+{
+    color: var(--blueyGrey);
+    font-size: 13px;
+}
+
+.popUpContentBody
+{
+    margin-top: 30px;
+}
+
+.labelForInput
+{
+    font-size: 12px;
+    color: var(--black38);
+}
+
+.textInput
+{
+    width: 100%;
+    background: transparent;
+    border: navajowhite;
+    border-bottom: 2px solid var(--black12);
+    height: 37px;
+    line-height: 37px;
+    font-size: 15px;
+    color:var(--warmGrey38);
+    margin-bottom: 10px;
+}
+
+.textInput:focus
+{
+    outline:none;
+    border-bottom-color:var(--cornflower);
+}
+
+
+.textInput::-webkit-input-placeholder
+{
+    color:var(--warmGrey38);
+}
+
+.textArea
+{
+    resize: none;
+    height: 90px;
+    margin-top: 15px;
+    line-height: unset;
+}
+
+.containeForInputAndSelect
+{
+    display: flex;
+    margin:15px 0px;
+    justify-content: space-between;
+}
+.selectTag
+{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    margin-left: 10px;
+    background: white;
+    color: var(--battleshipGrey);
+    border: none;
+    box-shadow: 0px 0px 4px 0px var(--silver);
+}
+
+.width175
+{
+    width:175px;
+}
+
+button
+{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    color: var(--coolGrey);
+    background: white;
+    border-color: var(--silverTwo);
+    border-radius: 4px;
+    -webkit-font-smoothing: antialiased;
+    cursor:pointer;
+}
+
+.saveButton
+{
+    background: var(--cornflower);
+    border-color:none;
+    color:white;
+}
+.marginRight10
+{
+    margin-right:10px;
+}
+
+.marginLeft10
+{
+    margin-left:10px;
+}
+.bottomDiv
+{
+    display: flex;
+    margin-top:15px;
+    justify-content: space-between;
+}
+
+.authorItemContainer
+{
+    background: white;
+    display: flex;
+    box-shadow: 0px 1px 1px 0px var(--slateGrey);
+    margin-bottom: 1px;
+    padding:16px 20px;
+    box-sizing: border-box;
+}
+
+.authorItemContainer:hover
+{
+    background: #f2fdfb;
+}
+.authorIconContainer
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 20px;
+    height:40px;
+}
+
+.authorTitleContainer
+{
+    display: flex;
+    flex-direction: column;
+    line-height: 22px;
+    font-size: 15px;
+    color: var(--charcoalGrey);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    flex-grow: 1;
+    width:calc(100% - 200px);
+}
+
+.authorAgeGender
+{
+    font-size:13px;
+    font-weight:normal;
+    color: var(--charcoalGrey);
+}
+
+.authorDescription
+{
+    font-size:13px;
+    font-weight:normal;
+    width:calc(100% - 55px);
+    color: var(--battleshipGrey);
+    -webkit-font-smoothing: antialiased;
+    margin-left:55px;
+    margin-top:5px;
+}
+.bornIn
+{
+    font-size: 13px;
+    color: var(--battleshipGrey);
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.bornInDetail
+{
+    font-size: 13px;
+    color: var(--battleshipGrey);
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.navigate
+{
+    color: var(--coolGreyTwo);
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    margin-top: 20px;
+    user-select: none;
+}
+
+.navigateButton
+{
+    height: 60px;
+    line-height: 80px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background: white;
+    border: 1px solid #e5e6ed;
+    margin: auto;
+    flex-direction: column;
+}
+
+.marginAuto
+{
+    margin:auto;
+}
+
+.navigateButtonContainer
+{
+    display: flex;
+}
+
+.detailContainer
+{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px;
+    box-shadow: 0px 0px 1px 0px var(--slateGrey);
+}
+
+.detailTitleContainer
+{
+    display: flex;
+}
+
+.height40
+{
+    height:40px
+}
+
+.bookAuthorList
+{
+    margin-left: 55px;
+    margin-top: 30px;
+}
+.bookAuthorTitle
+{
+    font-weight: 600;
+    color: var(--black50);
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.bookAuthorCount
+{
+    margin-left: 15px;
+    color: var(--coolGreyTwo);
+}
+
+.selectAuthor
+{
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.aboutBook
+{
+    font-size: 13px;
+    font-weight: 300;
+    color: #9095aa;
+    white-space: nowrap;
+    overflow: hidden;
+    width: calc(100% - 20px);
+    text-overflow: ellipsis;
+}
+
+.bookAuthorNameContainer
+{
+    font-weight: 300;
+    color:var(--coolGrey);
+    -webkit-font-smoothing: antialiased;
+}
+
+.bookAuthorName
+{
+    font-weight: 600;
+    color:var(--black50);
+    -webkit-font-smoothing: antialiased;
+}
+
+.bookListDetail
+{
+    margin-top:15px;
+    margin-left:60px;
+}
+
+.aboutDescriptionInDetail
+{
+    font-size:14px!important;
+    margin-left: 0px;
+    margin-top:-10px;
+    width: 100%;
+}
+
+.bookInAuthorView
+{
+    box-shadow: 0px 1px 1px -1px var(--slateGrey);
+    padding: 16px 0px;
+}
+
+.bookInAuthorView:hover
+{
+    background: white;
+}
+
+.titleAndBornInContainer
+{
+    display: flex;
+    width: calc(100% - 60px);
+}
+@media (max-width:850px) {
+    .appBodyContainer
+    {
+        flex-direction: column-reverse;
+        padding: 0px 20px;
+    }
+
+    .appHeaderContainer
+    {
+        padding:0px 20px;
+    }
+
+    .leftAppContainer
+    {
+        width:100%
+    }
+
+    .rightAppContainer
+    {
+        margin: auto!important;
+        padding-top: 0px;
+    }
+}
+@media (max-width:450px)
+{
+    .tab
+    {
+        padding:0px 15px;
+    }
+}
+@media (max-width:650px)
+{
+    .titleAndBornInContainer
+    {
+        flex-direction: column;
+    }
+    .authorTitleContainer
+    {
+        width:100%;
+    }
+
+    .bornInDetail
+    {
+        width:100%;
+        margin-bottom: 5px;
+        white-space: pre-wrap;
+        overflow: hidden;
+    }
+}
