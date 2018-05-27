@@ -16,6 +16,5 @@ To change the pre populate the authors and books list :
 * Open the file `src/config.js`
 * Edit the property `authors` to add new author
 * Edit the property `books` to add new book
-* To add multiple child to a node add objects within the `immediateEmployee` array present for each node.
-
+* Id is being generated using `author${new Date().getTime()}` or `book${new Date().getTime()}`
 NOTE: You can add author and books from the app also. The above is just to pre populate the app.
